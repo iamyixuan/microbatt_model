@@ -128,8 +128,8 @@ def prediction(cell_pot_seq, capacity_seq, current_density_list, power_density_l
     #     temp[order] = sorted_test[i]
     # print(temp.shape)
     
-    model = k.models.load_model('./models/six_curve_model_cell_pot_capacity_3_30.h5', custom_objects={'weighted_MSE': weighted_MSE, 'r2': r2})
-    model_mape = k.models.load_model('./models/mape_model.h5', custom_objects={'r2': r2})
+    model = k.models.load_model('/content/microbatt/src/models/six_curve_model_cell_pot_capacity_3_30.h5', custom_objects={'weighted_MSE': weighted_MSE, 'r2': r2})
+    model_mape = k.models.load_model('/content/microbatt/src/models/mape_model.h5', custom_objects={'r2': r2})
     
     pred_mse = model.predict([np_frame, extra_info.reshape(1, -1)])
     pred_mape = model_mape.predict([np_frame, extra_info.reshape(1, -1)])
