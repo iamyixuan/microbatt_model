@@ -2,7 +2,7 @@ import glob
 import numpy as np
 import pandas as pd
 
-def load_example_data(None):
+def load_example_data():
     test_data_dir = './set0/'
     files = glob.glob(test_data_dir +'*.csv')
     currents = []
