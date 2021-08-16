@@ -104,7 +104,8 @@ def prediction(cell_pot_seq, capacity_seq, current_density_list, power_density_l
         ax.set_xlim(0, 2.0)
         ax.set_ylim(2.0, 4.7)
 
-
+    if not os.path.exists("./test_tmp/"):
+        os.makedirs("./test_tmp/")
     fig.savefig('./test_tmp/test_fig_norm_trun_capacity.png', format='png', dpi=100)
 
     im_frame = cv2.imread('./test_tmp/test_fig_norm_trun_capacity.png')
