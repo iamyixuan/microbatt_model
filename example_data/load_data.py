@@ -21,5 +21,5 @@ def load_example_data(dir_path):
         power.append(temp['Power'].values[0])
 
     idx_ = np.argsort(currents)
-    return np.array(cell_pot)[idx_], np.array(capacity)[idx_], np.array(currents)[idx_], np.array(power)[idx_], np.array(energy)[idx_]
+    return np.array(cell_pot, dtype="object")[idx_], np.array(capacity, dtype="object")[idx_], np.array(currents, dtype="object")[idx_], np.array(power, dtype="object")[idx_], np.array(energy, dtype="object")[idx_]
 
