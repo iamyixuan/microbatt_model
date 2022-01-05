@@ -13,7 +13,7 @@ def load_example_data(dir_path):
     energy = []
     power = []
     for f in files:
-        print("Loading file %s" % f)
+        #print("Loading file %s" % f)
         temp = pd.read_csv(f)
         currents.append(temp['Curr den (A/m^2)'].values[0])
         cell_pot.append(temp['Cell pot(V)'].values)
