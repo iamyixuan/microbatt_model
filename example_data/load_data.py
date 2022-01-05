@@ -5,7 +5,8 @@ import pandas as pd
 def load_example_data(dir_path):
     test_data_dir = dir_path
     files = glob.glob(test_data_dir +'*.csv')
-    print("Loading file %s" % files)
+    
+    #print("Loading file %s" % files)
     currents = []
     cell_pot = []
     capacity = []
