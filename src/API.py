@@ -134,14 +134,14 @@ def prediction(cell_pot_seq, capacity_seq, current_density_list, power_density_l
     pred_mse = model.predict([np_frame, extra_info.reshape(1, -1)])
     pred_mape = model_mape.predict([np_frame, extra_info.reshape(1, -1)])
 
-    print("MSE Predicted Alpha is {:.2f} and K is {:.2f}".format(pred_mse[0][0], pred_mse[0][1]))
-    print("MAPE Predicted Alpha is {:.2f} and K is {:.2f}".format(pred_mape[0][0], pred_mape[0][1]))
+    print("MSE (L_w-model) Predicted Alpha is {:.2f} and S is {:.2f}".format(pred_mse[0][0], pred_mse[0][1]))
+    print("MAPE (L_M-model) Predicted Alpha is {:.2f} and S is {:.2f}".format(pred_mape[0][0], pred_mape[0][1]))
 
     mse_scores = [12.202474474906921, 2.754971571266651, 0.9775176644325256, 0.6340787746012211, 0.8929776959121227, 0.33431430347263813]
     mape_scores = [6.173022091388702, 1.1646689847111702, 1.1303179897367954, 0.8545964024960995, 1.0012668557465076, 0.40570483542978764]
 
     final_pred = make_prediction_alpha(np.array([pred_mse[0][0]]), np.array([pred_mape[0][0]]), mse_scores, mape_scores)
-    print("Final predicted Alpha is {:.2f} and K is {:.2f}".format(float(final_pred), pred_mse[0][1]))
+    print("Final predicted Alpha is {:.2f} and S is {:.2f}".format(float(final_pred), pred_mse[0][1]))
 
     return final_pred, pred_mse[0][1]
 
